@@ -26,6 +26,7 @@ def encode_image(image):
 
 def process_image_and_generate_speech():
     cap = cv2.VideoCapture(0)
+    print("Capturing image...")
     if not cap.isOpened():
         print("Error: Could not open camera.")
         exit()
@@ -37,12 +38,12 @@ def process_image_and_generate_speech():
 
     base64_image = encode_image(frame)
     cap.release()
-
+    print("Image captured and encoded.")
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key}"
     }
-
+    print("Sending image to OpenAI...")
     payload = {
         "model": "gpt-4-turbo",
         "messages": [
@@ -64,7 +65,7 @@ def process_image_and_generate_speech():
         ],
         "max_tokens": 300
     }
-
+    print("Image sent to OpenAI.")
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
     print(response.json())
 
