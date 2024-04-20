@@ -9,10 +9,9 @@ from flask import Flask, send_file
 # Flask setup
 app = Flask(__name__)
 
+
 @app.route('/speech', methods=['GET'])
 def get_speech():
-    encode_image()
-    process_image_and_generate_speech()
     speech_file_path = Path(__file__).parent / "speech.mp3"
     return send_file(speech_file_path, as_attachment=True)
 
@@ -82,8 +81,8 @@ def process_image_and_generate_speech():
     )
     print("Speech created.")
     response.stream_to_file(speech_file_path)
-
+process_image_and_generate_speech()
 # Run the Flask app
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-    process_image_and_generate_speech()
+    
