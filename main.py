@@ -16,6 +16,8 @@ def encode_image(image):
 
 # Open the default camera
 cap = cv2.VideoCapture(0)
+print("Opening camera...")
+print("Capturing frame...")
 
 # Check if the camera opened successfully
 if not cap.isOpened():
@@ -32,9 +34,10 @@ if not ret:
 
 # Encode the frame
 base64_image = encode_image(frame)
-
+print("Frame captured.")
 # Release the camera
 cap.release()
+print("Closing camera...")
 
 headers = {
     "Content-Type": "application/json",
