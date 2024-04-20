@@ -9,6 +9,7 @@ from flask import Flask, send_file
 # Flask setup
 app = Flask(__name__)
 
+
 @app.route('/speech', methods=['GET'])
 def get_speech():
     speech_file_path = Path(__file__).parent / "speech.mp3"
