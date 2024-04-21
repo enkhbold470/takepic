@@ -9,7 +9,7 @@ from flask import Flask, send_file, send_from_directory
 # Flask setup
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return send_from_directory("doc", "index.html")
     
