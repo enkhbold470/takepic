@@ -42,7 +42,7 @@ def process_image_and_generate_speech():
         print("Error: Could not capture frame.")
         exit()
         
-    cv2.imwrite('/static/image.jpg', frame)  # save the captured image
+    cv2.imwrite('static/image.jpg', frame)  # save the captured image
     print("Image captured and saved.")
     
     base64_image = encode_image(frame)
