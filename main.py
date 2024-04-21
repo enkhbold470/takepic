@@ -4,7 +4,7 @@ import base64
 import requests
 from pathlib import Path
 from openai import OpenAI
-from flask import Flask, send_file, send_from_directory
+from flask import Flask, send_file, send_from_directory, url_for
 
 # Flask setup
 app = Flask(__name__)
@@ -47,7 +47,7 @@ def process_image_and_generate_speech():
         exit()
     current_directory = os.getcwd()
     
-    cv2.imwrite("image.jpg", frame)  # save the captured image
+    cv2.imwrite("static/image.jpg", frame)  # save the captured image
     print("Image captured and saved.")
 
     
