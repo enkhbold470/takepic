@@ -4,14 +4,14 @@ import base64
 import requests
 from pathlib import Path
 from openai import OpenAI
-from flask import Flask, send_file
+from flask import Flask, send_file, render_template
 
 # Flask setup
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return send_file('index.html')
+    return render_template('index.html')
     
     # return "Welcome to the Image to Speech API!"
 
