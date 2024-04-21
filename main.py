@@ -9,6 +9,11 @@ from flask import Flask, send_file
 # Flask setup
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def home():
+    return send_file('index.html')
+    
+    # return "Welcome to the Image to Speech API!"
 
 @app.route('/speech', methods=['GET'])
 def get_speech():
