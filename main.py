@@ -7,7 +7,7 @@ from openai import OpenAI
 from flask import Flask, send_file, send_from_directory
 
 # Flask setup
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = Flask(__name__)
             
 @app.route('/')
 def index():
