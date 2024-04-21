@@ -4,14 +4,14 @@ import base64
 import requests
 from pathlib import Path
 from openai import OpenAI
-from flask import Flask, send_file, render_template
+from flask import Flask, send_file, send_from_directory
 
 # Flask setup
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def home():
-    return render_template('index.html')
+def index():
+    return send_from_directory("doc", "index.html")
     
     # return "Welcome to the Image to Speech API!"
 
@@ -43,8 +43,7 @@ def process_image_and_generate_speech():
         exit()
     current_directory = os.getcwd()
     
-    image_path = os.path.join(current_directory, 'static', 'image.jpg')
-    cv2.imwrite(image_path, frame)  # save the captured image
+    cv2.imwrite("image.jpg", frame)  # save the captured image
     print("Image captured and saved.")
 
     
