@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory("doc", "index.html")
+    return send_from_directory("index.html")
     
     # return "Welcome to the Image to Speech API!"
 
