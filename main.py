@@ -9,7 +9,7 @@ from flask import Flask, send_file, render_template
 # Flask setup
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('index.html')
     
@@ -42,7 +42,7 @@ def process_image_and_generate_speech():
         print("Error: Could not capture frame.")
         exit()
         
-    cv2.imwrite('image.jpg', frame)  # save the captured image
+    cv2.imwrite('template/image.jpg', frame)  # save the captured image
     print("Image captured and saved.")
     
     base64_image = encode_image(frame)
