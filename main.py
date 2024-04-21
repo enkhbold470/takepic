@@ -11,8 +11,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory("","index.html")
-    
+    return send_from_directory('templates', 'index.html')
+
+@app.route('/styles.css')
+def styles():
+    return send_from_directory('static', 'styles.css')
+
     # return "Welcome to the Image to Speech API!"
 
 @app.route('/speech', methods=['GET'])
