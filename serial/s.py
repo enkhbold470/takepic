@@ -54,6 +54,7 @@ def process_image_and_generate_speech():
         exit()
 
     cv2.imwrite('image.jpg', frame)  # save the captured image
+    
     print("Image captured and saved.")
 
     base64_image = encode_image(frame)
