@@ -23,6 +23,7 @@ ser = serial.Serial('/dev/ttyUSB0', 115200)  # replace '/dev/ttyACM0' with your 
 time.sleep(2)  # wait for the serial connection to initialize
 
 
+
 # Flask setup
 
 
