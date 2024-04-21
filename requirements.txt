@@ -2,3 +2,4 @@ opencv-python-headless==4.9.0.80
 openai==1.23.2
 requests==2.31.0
 flask==3.0.3
+serial==0.0.97

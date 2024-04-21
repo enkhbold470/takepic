@@ -19,7 +19,7 @@ def home():
     # return "Welcome to the Image to Speech API!"
 
 # Create a serial connection
-ser = serial.Serial('/dev/ttyACM0', 115200)  # replace '/dev/ttyACM0' with your Arduino's port
+ser = serial.Serial('/dev/ttyUSB0', 115200)  # replace '/dev/ttyACM0' with your Arduino's port
 time.sleep(2)  # wait for the serial connection to initialize
 
 
